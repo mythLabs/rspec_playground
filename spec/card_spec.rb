@@ -9,18 +9,17 @@ class Card
     end
 end
 
-RSpec.describe 'Card' do #creates an example group
+RSpec.describe Card do #creates an example group
+    before do
+        @card = Card.new('Ace', 'Spades')
+    end
 
     #what it should do #termed as an example
-    it 'has a rankpe' do
-        card = Card.new('Ace', 'Spades')
-
-        expect(card.rank).to eq('Ace')
+    it 'has a ranki' do
+        expect(@card.rank).to eq('Ace')
     end
 
     it 'has a suit' do
-        card = Card.new('Ace', 'Spades')
-
-        expect(card.suit).to eq('Spades')
+        expect(@card.suit).to eq('Spades')
     end
 end
